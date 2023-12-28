@@ -45,13 +45,16 @@ class FetchProductsCubit extends Cubit<FetchProductsState> {
     }
   }
   addToBasket(Product_Model product){
-    final item=BasketModel(
-        price:product.price! ,
+    bool isAlreadyAdded = Items.any((item) => item.title == product.title);
+    if(!isAlreadyAdded) {
+      final item = BasketModel(
+        price: product.price!,
         image: product.image!,
         title: product.title!,
         category: product.category!,
-    );
-    Items.add(item);
+      );
+      Items.add(item);
+    }
   }
   void quantity(BasketModel basketModel,String mark){
     if (mark == "+") {
