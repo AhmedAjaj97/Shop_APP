@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shoping_app/core/utlts/approute.dart';
+import 'package:shoping_app/features/home/presentation/manager/fetchcategories_cubit.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 import 'package:shoping_app/features/home/presentation/views/widgets/gridview_item_widget.dart';
 class ItemsCategory extends StatelessWidget {
@@ -16,13 +17,12 @@ class ItemsCategory extends StatelessWidget {
         leading: IconButton(
             onPressed: ()async{
               GoRouter.of(context).pop();
-              await BlocProvider.of<FetchProductsCubit>(context).getAllProducts();
             },
             icon:const Icon(Icons.arrow_back_ios,color: Colors.black,),
         ),
       ),
       body: SafeArea(
-        child: BlocBuilder<FetchProductsCubit,FetchProductsState>(
+        child: BlocBuilder<FetchCategoriesCubit,FetchCategoriesState>(
           builder:(context,state){
             if (state is FetchCateState){
               return Padding(

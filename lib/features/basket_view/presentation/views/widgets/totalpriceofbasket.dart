@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoping_app/features/basket_view/presentation/manager/mybasket_cubit.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 class TotalPrice extends StatelessWidget {
   const TotalPrice({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FetchProductsCubit,FetchProductsState>(
+    return BlocBuilder<MybasketCubit,MybasketState>(
         builder:(context,state)
     {
       return Padding(
@@ -20,7 +21,7 @@ class TotalPrice extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Text("\$" + "${BlocProvider.of<FetchProductsCubit>(context)
+              Text("\$" + "${BlocProvider.of<MybasketCubit>(context)
                   .MaxPrice()
                   .toString()}",
                 style: const TextStyle(

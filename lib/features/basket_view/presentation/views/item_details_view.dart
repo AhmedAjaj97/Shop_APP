@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoping_app/features/basket_view/presentation/manager/mybasket_cubit.dart';
 import 'package:shoping_app/features/home/data/model/products_model.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 class ItemDetails extends StatelessWidget {
@@ -9,7 +10,7 @@ class ItemDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body:BlocBuilder<FetchProductsCubit,FetchProductsState>(builder: (context,state){
+      body:BlocBuilder<MybasketCubit,MybasketState>(builder: (context,state){
         return     SafeArea(
           child:  Padding(
             padding: const EdgeInsets.symmetric(horizontal: 17),
@@ -64,7 +65,7 @@ class ItemDetails extends StatelessWidget {
                                 style:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold) ,),
                               const  Spacer(),
                               IconButton(onPressed: (){
-                                BlocProvider.of<FetchProductsCubit>(context).addToBasket(product_model);
+                                BlocProvider.of<MybasketCubit>(context).addToBasket(product_model);
                               },
                                 icon: const Icon(Icons.add_shopping_cart),
                               )

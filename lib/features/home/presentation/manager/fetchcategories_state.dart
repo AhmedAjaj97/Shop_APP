@@ -5,9 +5,10 @@ abstract class FetchCategoriesState {}
 
 class FetchCategoriesInitial extends FetchCategoriesState {}
 class LoadingCategoryState extends FetchCategoriesState {}
-class FetchCategoryState extends FetchCategoriesState {
-  FetchCategoryState({required this.categories});
-  List<String> categories;
+class LoadingProductsOfCateState extends FetchCategoriesState {}
+class FetchCateState extends FetchCategoriesState {
+  FetchCateState({required this.products1});
+  List<Product_Model> products1;
 
 }
-class ErrorCategoriesState extends FetchCategoriesState {}
+class ErrorState extends FetchCategoriesState {}

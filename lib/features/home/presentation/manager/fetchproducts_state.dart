@@ -10,18 +10,10 @@ class FetchProductsState1 extends FetchProductsState {
 }
 class LoadingProductsState extends FetchProductsState {}
 class ErrorFetchProductsState extends FetchProductsState {}
-class FetchCateState extends FetchProductsState {
-  FetchCateState({required this.products1});
-  List<Product_Model> products1;
-}
-class LoadingProductsOfCateState extends FetchProductsState {}
-class ErrorState extends FetchProductsState {}
 class FetchSearchState extends FetchProductsState {
   FetchSearchState({required this.search});
   List<Product_Model> search;
 }
-class IncreaseQuantityState extends FetchProductsState {}
-class MaxPriceState extends FetchProductsState {}
 
 
 

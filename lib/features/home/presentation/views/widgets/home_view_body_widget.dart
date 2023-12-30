@@ -11,14 +11,14 @@ class HomeViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-           CustomAppbar(),
-           CustomTextField(),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 15),
+        children:  [
+          const CustomAppbar(),
+          const CustomTextField(),
+           Padding(
+            padding:const EdgeInsets.symmetric(vertical: 15),
             child: Category(),
           ),
-          CustomGridViewList(),
+          const CustomGridViewList(),
         ],
       ),
     );

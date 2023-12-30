@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shoping_app/core/utlts/approute.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
-import 'package:shoping_app/features/home/presentation/views/item_details_view.dart';
+import 'package:shoping_app/features/basket_view/presentation/views/item_details_view.dart';
 import 'package:shoping_app/features/home/presentation/views/widgets/gridview_item_widget.dart';
 class CustomGridViewList extends StatelessWidget {
   const CustomGridViewList({Key? key}) : super(key: key);
