@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoping_app/features/home/data/model/basket_model.dart';
+import 'package:shoping_app/features/basket_view/data/model/basket_model.dart';
+import 'package:shoping_app/features/basket_view/presentation/manager/mybasket_cubit.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 class AddorRemoveProduct extends StatelessWidget {
   AddorRemoveProduct({
@@ -16,7 +17,7 @@ BasketModel basketModel;
           padding: const EdgeInsets.symmetric(horizontal: 6),
           child: GestureDetector(
             onTap: (){
-              BlocProvider.of<FetchProductsCubit>(context).quantity(basketModel,"-");
+              BlocProvider.of<MybasketCubit>(context).quantity(basketModel,"-");
             },
             child:const Icon(
               Icons.remove_circle_outline,
@@ -29,7 +30,7 @@ BasketModel basketModel;
           padding: const EdgeInsets.symmetric(horizontal: 6),
           child: GestureDetector(
             onTap: (){
-              BlocProvider.of<FetchProductsCubit>(context).quantity(basketModel,"+");
+              BlocProvider.of<MybasketCubit>(context).quantity(basketModel,"+");
             },
             child:const Icon(
               Icons.add_circle_outline,

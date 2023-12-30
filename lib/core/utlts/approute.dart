@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shoping_app/features/basket_view/presentation/views/basketview.dart';
 import 'package:shoping_app/features/home/data/model/products_model.dart';
 import 'package:shoping_app/features/home/presentation/views/home_view.dart';
-import 'package:shoping_app/features/home/presentation/views/item_details_view.dart';
+import 'package:shoping_app/features/basket_view/presentation/views/item_details_view.dart';
 import 'package:shoping_app/features/home/presentation/views/items_of_category.dart';
 
 abstract class AppRouter {

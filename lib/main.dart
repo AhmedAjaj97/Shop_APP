@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoping_app/core/utlts/api_service.dart';
 import 'package:shoping_app/core/utlts/approute.dart';
+import 'package:shoping_app/features/basket_view/presentation/manager/mybasket_cubit.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchcategories_cubit.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 
@@ -23,8 +24,12 @@ class MyApp extends StatelessWidget {
             create:(context)=>FetchProductsCubit(HomeRepoImp(ApiService()))..getAllProducts(),
           ),
           BlocProvider(
-            create:(context)=>FetchCategoriesCubit(HomeRepoImp(ApiService()))..getCategory(),
-          )
+            create:(context)=>FetchCategoriesCubit(HomeRepoImp(ApiService())),
+          ),
+          BlocProvider(
+            create:(context)=>MybasketCubit(),
+          ),
+
 
         ],
         child:MaterialApp.router (

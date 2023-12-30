@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoping_app/features/basket_view/presentation/manager/mybasket_cubit.dart';
 import 'package:shoping_app/features/basket_view/presentation/views/widgets/add_or_remove_widget.dart';
-import 'package:shoping_app/features/home/data/model/basket_model.dart';
+import 'package:shoping_app/features/basket_view/data/model/basket_model.dart';
 import 'package:shoping_app/features/home/presentation/manager/fetchproducts_cubit.dart';
 
 import '../../../../../core/utlts/assets.dart';
@@ -14,7 +15,7 @@ class ItemofbasketListview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FetchProductsCubit,FetchProductsState>(
+    return BlocBuilder<MybasketCubit,MybasketState>(
         builder:(context,state){
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
